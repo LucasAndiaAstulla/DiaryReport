@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var nomeInput: EditText
     lateinit var dataInput: EditText
+    lateinit var buttonInfo: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,14 +32,15 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-
         nomeInput = findViewById(R.id.nomeInput)
         dataInput = findViewById(R.id.dataInput)
+        buttonInfo = findViewById(R.id.informacoes)
 
-        val buttonInfo = findViewById<Button>(R.id.informacoes)
 
         buttonInfo.setOnClickListener {
+            val dataNome = nomeInput.text.toString()
             val intent = Intent(this, infoActivity::class.java)
+            intent.putExtra("texto_enviado", dataNome)
             startActivity(intent)
         }
 
