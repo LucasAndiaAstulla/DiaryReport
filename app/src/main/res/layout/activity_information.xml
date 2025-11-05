@@ -7,69 +7,18 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="141dp"
-        android:layout_height="29dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="16dp"
-        android:text="Seja bem-vindo"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/textDate"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
     <!-- Usado o Constraint Layout para ser o conteiner das informações de vendas -->
-
-    <TextView
-        android:id="@+id/namePull"
-        android:layout_width="147dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="16dp"
-        android:text="{Nome aqui}"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/datePull"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@id/textView"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textDate"
-        android:layout_width="53dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="60dp"
-        android:text="Data:"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/datePull"
-        android:layout_width="110dp"
-        android:layout_height="28dp"
-        android:text="{Data aqui}"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@id/textDate"
-        app:layout_constraintTop_toTopOf="@id/textDate" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/boxVendas"
         android:layout_width="357dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/rounded_bg"
         android:padding="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.462"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textDate">
+        app:layout_constraintTop_toBottomOf="@+id/datePull">
 
 
         <TextView
@@ -98,6 +47,7 @@
             android:layout_width="52dp"
             android:layout_height="39dp"
             android:layout_marginStart="8dp"
+            android:textSize="10sp"
             app:layout_constraintBaseline_toBaselineOf="@id/textPersonal"
             app:layout_constraintStart_toEndOf="@id/textPersonal" />
 
@@ -116,6 +66,7 @@
             android:layout_width="56dp"
             android:layout_height="39dp"
             android:layout_marginStart="8dp"
+            android:textSize="10sp"
             app:layout_constraintBaseline_toBaselineOf="@id/textMensal"
             app:layout_constraintStart_toEndOf="@id/textMensal" />
 
@@ -135,6 +86,7 @@
             android:layout_width="53dp"
             android:layout_height="38dp"
             android:layout_marginStart="8dp"
+            android:textSize="10sp"
             app:layout_constraintBaseline_toBaselineOf="@id/textDiaria"
             app:layout_constraintStart_toEndOf="@id/textDiaria" />
 
@@ -154,6 +106,7 @@
             android:layout_width="47dp"
             android:layout_height="38dp"
             android:layout_marginStart="8dp"
+            android:textSize="10sp"
             app:layout_constraintBaseline_toBaselineOf="@id/textStart"
             app:layout_constraintStart_toEndOf="@id/textStart" />
 
@@ -172,6 +125,7 @@
             android:layout_width="53dp"
             android:layout_height="38dp"
             android:layout_marginStart="8dp"
+            android:textSize="10sp"
             app:layout_constraintBaseline_toBaselineOf="@id/textPlus"
             app:layout_constraintStart_toEndOf="@id/textPlus" />
 
@@ -190,6 +144,7 @@
             android:layout_width="53dp"
             android:layout_height="39dp"
             android:layout_marginStart="8dp"
+            android:textSize="10sp"
             app:layout_constraintBaseline_toBaselineOf="@id/textVisitas"
             app:layout_constraintStart_toEndOf="@id/textVisitas" />
 
@@ -209,6 +164,7 @@
             android:layout_width="51dp"
             android:layout_height="38dp"
             android:layout_marginStart="8dp"
+            android:textSize="10sp"
             app:layout_constraintBaseline_toBaselineOf="@id/textBiopedancia"
             app:layout_constraintStart_toEndOf="@id/textBiopedancia" />
 
@@ -218,15 +174,14 @@
         android:id="@+id/linearLayout"
         android:layout_width="352dp"
         android:layout_height="163dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/rounded_bg"
         android:orientation="vertical"
         android:padding="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/boxChecklist"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.846">
+        app:layout_constraintTop_toBottomOf="@+id/boxVendas">
 
         <TextView
             android:id="@+id/titleVendas5"
@@ -235,6 +190,7 @@
             android:text="Interocorrências ao assumir plantão"
             android:textSize="20sp"
             android:textStyle="bold"
+            android:layout_marginBottom="10sp"
             app:layout_column="0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -243,8 +199,10 @@
         <EditText
             android:id="@+id/inputAssumir"
             android:layout_width="319dp"
-            android:layout_height="28dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            android:layout_marginBottom="10sp"
+            android:textSize="10sp"
             app:layout_constraintBaseline_toBaselineOf="@id/textPersonal"
             app:layout_constraintStart_toEndOf="@id/textPersonal" />
 
@@ -255,6 +213,7 @@
             android:text="Interocorrências ao deixar plantão"
             android:textSize="20sp"
             android:textStyle="bold"
+            android:layout_marginBottom="10sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -263,6 +222,8 @@
             android:layout_width="326dp"
             android:layout_height="33dp"
             android:layout_marginStart="8dp"
+            android:textSize="10sp"
+            android:layout_marginBottom="10sp"
             app:layout_constraintBaseline_toBaselineOf="@id/textPersonal"
             app:layout_constraintStart_toEndOf="@id/textPersonal" />
     </LinearLayout>
@@ -276,162 +237,181 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.501">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.333">
 
 
         <CheckBox
             android:id="@+id/falseComp"
             android:layout_width="67dp"
             android:layout_height="18dp"
+            android:layout_marginTop="10dp"
             android:text="Falta"
             android:textAlignment="textStart"
-            tools:layout_editor_absoluteX="176dp"
-            tools:layout_editor_absoluteY="171dp" />
+            app:layout_constraintStart_toEndOf="@+id/trueComp"
+            app:layout_constraintTop_toBottomOf="@+id/falseSistema" />
 
         <CheckBox
             android:id="@+id/trueComp"
             android:layout_width="59dp"
             android:layout_height="17dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
             android:text="OK"
             android:textAlignment="textStart"
-            tools:layout_editor_absoluteX="112dp"
-            tools:layout_editor_absoluteY="171dp" />
+            app:layout_constraintStart_toEndOf="@+id/textMensal6"
+            app:layout_constraintTop_toBottomOf="@+id/trueSistema" />
 
         <CheckBox
             android:id="@+id/falseManu"
             android:layout_width="67dp"
             android:layout_height="18dp"
+            android:layout_marginTop="10dp"
             android:text="Falta"
             android:textAlignment="textStart"
-            tools:layout_editor_absoluteX="251dp"
-            tools:layout_editor_absoluteY="203dp" />
+            app:layout_constraintStart_toEndOf="@+id/trueManu"
+            app:layout_constraintTop_toBottomOf="@+id/falseComp" />
 
         <CheckBox
             android:id="@+id/trueManu"
             android:layout_width="59dp"
             android:layout_height="17dp"
+            android:layout_marginTop="10dp"
             android:text="OK"
             android:textAlignment="textStart"
-            tools:layout_editor_absoluteX="187dp"
-            tools:layout_editor_absoluteY="203dp" />
+            app:layout_constraintStart_toEndOf="@+id/textMensal7"
+            app:layout_constraintTop_toBottomOf="@+id/trueComp" />
 
         <CheckBox
             android:id="@+id/falseSistema"
             android:layout_width="67dp"
             android:layout_height="18dp"
+            android:layout_marginTop="10dp"
             android:text="Falta"
             android:textAlignment="textStart"
-            tools:layout_editor_absoluteX="210dp"
-            tools:layout_editor_absoluteY="137dp" />
+            app:layout_constraintStart_toEndOf="@+id/trueSistema"
+            app:layout_constraintTop_toBottomOf="@+id/falseCatraca" />
 
         <CheckBox
             android:id="@+id/trueSistema"
             android:layout_width="59dp"
             android:layout_height="17dp"
+            android:layout_marginTop="10dp"
             android:text="OK"
             android:textAlignment="textStart"
-            tools:layout_editor_absoluteX="146dp"
-            tools:layout_editor_absoluteY="137dp" />
+            app:layout_constraintStart_toEndOf="@+id/textMensal5"
+            app:layout_constraintTop_toBottomOf="@+id/trueCatraca" />
 
         <CheckBox
             android:id="@+id/trueCatraca"
             android:layout_width="59dp"
             android:layout_height="17dp"
+            android:layout_marginTop="10dp"
             android:text="OK"
             android:textAlignment="textStart"
-            tools:layout_editor_absoluteX="79dp"
-            tools:layout_editor_absoluteY="108dp" />
+            app:layout_constraintStart_toEndOf="@+id/textMensal4"
+            app:layout_constraintTop_toBottomOf="@+id/trueAr" />
 
         <CheckBox
             android:id="@+id/falseCatraca"
             android:layout_width="67dp"
             android:layout_height="18dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
             android:text="Falta"
             android:textAlignment="textStart"
-            tools:layout_editor_absoluteX="143dp"
-            tools:layout_editor_absoluteY="108dp" />
+            app:layout_constraintStart_toEndOf="@+id/trueCatraca"
+            app:layout_constraintTop_toBottomOf="@+id/falseAr" />
 
         <CheckBox
             android:id="@+id/falseFalta"
             android:layout_width="66dp"
             android:layout_height="16dp"
+            android:layout_marginTop="16dp"
             android:text="Falta"
             android:textAlignment="textStart"
-            tools:layout_editor_absoluteX="186dp"
-            tools:layout_editor_absoluteY="43dp" />
+            app:layout_constraintStart_toEndOf="@+id/trueFalta"
+            app:layout_constraintTop_toBottomOf="@+id/titleVendas7" />
 
         <CheckBox
             android:id="@+id/trueFalta"
             android:layout_width="59dp"
             android:layout_height="17dp"
+            android:layout_marginTop="16dp"
             android:text="OK"
             android:textAlignment="textStart"
-            tools:layout_editor_absoluteX="122dp"
-            tools:layout_editor_absoluteY="43dp" />
+            app:layout_constraintStart_toEndOf="@+id/textMensal2"
+            app:layout_constraintTop_toBottomOf="@+id/titleVendas7" />
 
         <TextView
             android:id="@+id/textMensal2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:text="Faltas na equipe:"
             android:textSize="12sp"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="43dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleVendas7" />
 
         <TextView
             android:id="@+id/textMensal3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:text="Ar-condicionado:"
             android:textSize="12sp"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="75dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textMensal2" />
 
         <TextView
             android:id="@+id/textMensal4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:text="Catracas:"
             android:textSize="12sp"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="107dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textMensal3" />
 
         <TextView
             android:id="@+id/textMensal5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:text="Evo/TEF/Biopedancia:"
             android:textSize="12sp"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="139dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textMensal4" />
 
         <TextView
             android:id="@+id/textMensal6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:text="Computadores:"
             android:textSize="12sp"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="171dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textMensal5" />
 
         <TextView
             android:id="@+id/textMensal7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:text="Manutenções em andamento:"
             android:textSize="12sp"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="203dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textMensal6" />
 
         <TextView
             android:id="@+id/titleVendas7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
             android:text="Outras informações:"
             android:textSize="20sp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -439,19 +419,68 @@
             android:id="@+id/falseAr"
             android:layout_width="67dp"
             android:layout_height="18dp"
+            android:layout_marginTop="10dp"
             android:text="Falta"
             android:textAlignment="textStart"
-            tools:layout_editor_absoluteX="186dp"
-            tools:layout_editor_absoluteY="74dp" />
+            app:layout_constraintStart_toEndOf="@+id/trueAr"
+            app:layout_constraintTop_toBottomOf="@+id/falseFalta" />
 
         <CheckBox
             android:id="@+id/trueAr"
             android:layout_width="59dp"
             android:layout_height="17dp"
+            android:layout_marginTop="10dp"
             android:text="OK"
             android:textAlignment="textStart"
-            tools:layout_editor_absoluteX="123dp"
-            tools:layout_editor_absoluteY="74dp" />
+            app:layout_constraintStart_toEndOf="@+id/textMensal3"
+            app:layout_constraintTop_toBottomOf="@+id/trueFalta" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="141dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="16dp"
+        android:text="Seja bem-vindo"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/namePull"
+        android:layout_width="145dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="16dp"
+        android:text="{Nome aqui}"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textDate"
+        android:layout_width="53dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="12dp"
+        android:text="Data:"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/datePull"
+        android:layout_width="110dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="12dp"
+        android:text="{Data aqui}"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.072"
+        app:layout_constraintStart_toEndOf="@+id/textDate"
+        app:layout_constraintTop_toBottomOf="@+id/namePull" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
