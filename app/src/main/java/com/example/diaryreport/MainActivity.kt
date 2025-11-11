@@ -39,9 +39,13 @@ class MainActivity : AppCompatActivity() {
 
         buttonInfo.setOnClickListener {
             val dataNome = nomeInput.text.toString()
+            val dataDia = dataInput.text.toString()
             val intent = Intent(this, infoActivity::class.java)
-            intent.putExtra("texto_enviado", dataNome)
+            intent.putExtra("nome_enviado", dataNome)
+            intent.putExtra("dia_enviado", dataDia)
             startActivity(intent)
+
+
         }
 
     }

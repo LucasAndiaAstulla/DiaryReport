@@ -18,10 +18,14 @@ class infoActivity : AppCompatActivity() {
             insets
         }
 
-        val textView = findViewById<TextView>(R.id.namePull)
+        val localNome = findViewById<TextView>(R.id.namePull)
+        val localDia = findViewById<TextView>(R.id.datePull)
 
-        val textoRecebido = intent.getStringExtra("texto_enviado")
-        textView.text = textoRecebido
+        val nomeRecebido = intent.getStringExtra("nome_enviado")
+        localNome.text = nomeRecebido
+
+        val diaRecebido = intent.getStringExtra("dia_enviado")
+        localDia.text = diaRecebido
 
 
     }

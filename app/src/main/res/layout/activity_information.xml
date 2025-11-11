@@ -13,164 +13,180 @@
         android:id="@+id/boxVendas"
         android:layout_width="357dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/rounded_bg"
         android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.518"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/datePull">
 
+
+        <EditText
+            android:id="@+id/editPersonal6"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="5dp"
+            android:textSize="9sp"
+            app:layout_constraintStart_toEndOf="@+id/textStart"
+            app:layout_constraintTop_toBottomOf="@+id/editPersonal7" />
+
+        <EditText
+            android:id="@+id/editPersonal3"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="3dp"
+            android:textSize="9sp"
+            app:layout_constraintStart_toEndOf="@+id/textPersonal"
+            app:layout_constraintTop_toBottomOf="@+id/titleVendas" />
 
         <TextView
             android:id="@+id/titleVendas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
             android:text="Vendas:"
             android:textSize="20sp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.003"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
 
         <TextView
             android:id="@+id/textPersonal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="15dp"
             android:text="Personal:"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/titleVendas" />
+            app:layout_constraintTop_toBottomOf="@+id/titleVendas" />
 
         <EditText
             android:id="@+id/editPersonal"
-            android:layout_width="52dp"
-            android:layout_height="39dp"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="2dp"
+            android:textSize="9sp"
+            app:layout_constraintStart_toEndOf="@+id/textBiopedancia"
+            app:layout_constraintTop_toBottomOf="@+id/editPersonal5" />
+
+        <EditText
+            android:id="@+id/editPersonal5"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="1dp"
             android:textSize="10sp"
-            app:layout_constraintBaseline_toBaselineOf="@id/textPersonal"
-            app:layout_constraintStart_toEndOf="@id/textPersonal" />
+            app:layout_constraintStart_toEndOf="@+id/textPlus"
+            app:layout_constraintTop_toBottomOf="@+id/editPersonal2" />
+
+        <EditText
+            android:id="@+id/editPersonal4"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="1dp"
+            android:textSize="9sp"
+            app:layout_constraintStart_toEndOf="@+id/textVisitas"
+            app:layout_constraintTop_toBottomOf="@+id/editPersonal6" />
+
+        <EditText
+            android:id="@+id/editPersonal7"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="3dp"
+            android:textSize="9sp"
+            app:layout_constraintStart_toEndOf="@+id/textMensal"
+            app:layout_constraintTop_toBottomOf="@+id/titleVendas" />
+
+        <EditText
+            android:id="@+id/editPersonal2"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="1dp"
+            android:textSize="9sp"
+            app:layout_constraintStart_toEndOf="@+id/textDiaria"
+            app:layout_constraintTop_toBottomOf="@+id/editPersonal3" />
+
 
         <TextView
             android:id="@+id/textMensal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="17dp"
             android:text="Mensal:"
             android:textSize="12sp"
-            app:layout_constraintBaseline_toBaselineOf="@id/textPersonal"
-            app:layout_constraintStart_toEndOf="@id/editPersonal" />
-
-        <EditText
-            android:id="@+id/editMensal"
-            android:layout_width="56dp"
-            android:layout_height="39dp"
-            android:layout_marginStart="8dp"
-            android:textSize="10sp"
-            app:layout_constraintBaseline_toBaselineOf="@id/textMensal"
-            app:layout_constraintStart_toEndOf="@id/textMensal" />
-
+            app:layout_constraintStart_toEndOf="@+id/editPersonal3"
+            app:layout_constraintTop_toBottomOf="@+id/titleVendas" />
 
         <TextView
             android:id="@+id/textDiaria"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
             android:text="Diária:"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textPersonal" />
-
-        <EditText
-            android:id="@+id/editDiaria"
-            android:layout_width="53dp"
-            android:layout_height="38dp"
-            android:layout_marginStart="8dp"
-            android:textSize="10sp"
-            app:layout_constraintBaseline_toBaselineOf="@id/textDiaria"
-            app:layout_constraintStart_toEndOf="@id/textDiaria" />
+            app:layout_constraintTop_toBottomOf="@+id/textPersonal" />
 
         <TextView
             android:id="@+id/textStart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
+            android:layout_marginTop="20dp"
             android:text="Start:"
             android:textSize="12sp"
-            app:layout_constraintBaseline_toBaselineOf="@id/textDiaria"
-            app:layout_constraintStart_toEndOf="@id/editDiaria" />
+            app:layout_constraintStart_toEndOf="@+id/editPersonal2"
+            app:layout_constraintTop_toBottomOf="@+id/textMensal" />
 
-
-        <EditText
-            android:id="@+id/editStart"
-            android:layout_width="47dp"
-            android:layout_height="38dp"
-            android:layout_marginStart="8dp"
-            android:textSize="10sp"
-            app:layout_constraintBaseline_toBaselineOf="@id/textStart"
-            app:layout_constraintStart_toEndOf="@id/textStart" />
 
         <TextView
             android:id="@+id/textPlus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginStart="19dp"
+            android:layout_marginTop="20dp"
             android:text="Plus:"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textDiaria" />
-
-        <EditText
-            android:id="@+id/editPlus"
-            android:layout_width="53dp"
-            android:layout_height="38dp"
-            android:layout_marginStart="8dp"
-            android:textSize="10sp"
-            app:layout_constraintBaseline_toBaselineOf="@id/textPlus"
-            app:layout_constraintStart_toEndOf="@id/textPlus" />
+            app:layout_constraintTop_toBottomOf="@+id/textDiaria" />
 
         <TextView
             android:id="@+id/textVisitas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="20dp"
             android:text="Visitas:"
             android:textSize="12sp"
-            app:layout_constraintBaseline_toBaselineOf="@id/textPlus"
-            app:layout_constraintStart_toEndOf="@id/editPlus" />
-
-        <EditText
-            android:id="@+id/editVisitas"
-            android:layout_width="53dp"
-            android:layout_height="39dp"
-            android:layout_marginStart="8dp"
-            android:textSize="10sp"
-            app:layout_constraintBaseline_toBaselineOf="@id/textVisitas"
-            app:layout_constraintStart_toEndOf="@id/textVisitas" />
+            app:layout_constraintStart_toEndOf="@+id/editPersonal5"
+            app:layout_constraintTop_toBottomOf="@+id/textStart" />
 
 
         <TextView
             android:id="@+id/textBiopedancia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="20dp"
             android:text="Biopedância:"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textPlus" />
-
-        <EditText
-            android:id="@+id/editBiopedancia"
-            android:layout_width="51dp"
-            android:layout_height="38dp"
-            android:layout_marginStart="8dp"
-            android:textSize="10sp"
-            app:layout_constraintBaseline_toBaselineOf="@id/textBiopedancia"
-            app:layout_constraintStart_toEndOf="@id/textBiopedancia" />
+            app:layout_constraintTop_toBottomOf="@+id/textPlus" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linearLayout"
         android:layout_width="352dp"
         android:layout_height="163dp"
@@ -185,26 +201,29 @@
 
         <TextView
             android:id="@+id/titleVendas5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="296dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="8dp"
             android:text="Interocorrências ao assumir plantão"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:layout_marginBottom="10sp"
             app:layout_column="0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputAssumir"
             app:layout_row="0" />
 
         <EditText
             android:id="@+id/inputAssumir"
-            android:layout_width="319dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginBottom="10sp"
+            android:layout_width="290dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="8dp"
             android:textSize="10sp"
-            app:layout_constraintBaseline_toBaselineOf="@id/textPersonal"
-            app:layout_constraintStart_toEndOf="@id/textPersonal" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleVendas4" />
 
         <TextView
             android:id="@+id/titleVendas4"
@@ -213,7 +232,7 @@
             android:text="Interocorrências ao deixar plantão"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:layout_marginBottom="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -221,21 +240,25 @@
             android:id="@+id/editDeixar"
             android:layout_width="326dp"
             android:layout_height="33dp"
-            android:layout_marginStart="8dp"
             android:textSize="10sp"
-            android:layout_marginBottom="10sp"
-            app:layout_constraintBaseline_toBaselineOf="@id/textPersonal"
-            app:layout_constraintStart_toEndOf="@id/textPersonal" />
-    </LinearLayout>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleVendas5"
+            app:layout_constraintVertical_bias="0.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/boxChecklist"
         android:layout_width="357dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:background="@drawable/rounded_bg"
         android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.518"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:layout_constraintVertical_bias="0.333">
@@ -438,13 +461,15 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="141dp"
-        android:layout_height="29dp"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="16dp"
-        android:text="Seja bem-vindo"
+        android:id="@+id/textName"
+        android:layout_width="101dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="20dp"
+        android:text="Bem vindo "
         android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/namePull"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -452,35 +477,34 @@
         android:id="@+id/namePull"
         android:layout_width="145dp"
         android:layout_height="29dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="56dp"
         android:text="{Nome aqui}"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textDate"
         android:layout_width="53dp"
         android:layout_height="28dp"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="4dp"
         android:text="Data:"
         android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/datePull"
+        app:layout_constraintHorizontal_bias="0.017"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textName" />
 
     <TextView
         android:id="@+id/datePull"
         android:layout_width="110dp"
         android:layout_height="28dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginEnd="100dp"
         android:text="{Data aqui}"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.072"
-        app:layout_constraintStart_toEndOf="@+id/textDate"
         app:layout_constraintTop_toBottomOf="@+id/namePull" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
