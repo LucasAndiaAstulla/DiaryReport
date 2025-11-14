@@ -1,6 +1,7 @@
 package com.example.diaryreport
 
 import android.os.Bundle
+import android.widget.EditText
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -8,7 +9,14 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class infoActivity : AppCompatActivity() {
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        lateinit var inputEntrar: EditText
+        lateinit var inputSair: EditText
+
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_information)
@@ -18,6 +26,7 @@ class infoActivity : AppCompatActivity() {
             insets
         }
 
+
         val localNome = findViewById<TextView>(R.id.namePull)
         val localDia = findViewById<TextView>(R.id.datePull)
 
@@ -26,6 +35,17 @@ class infoActivity : AppCompatActivity() {
 
         val diaRecebido = intent.getStringExtra("dia_enviado")
         localDia.text = diaRecebido
+
+        val prefs = getSharedPreferences("dadosChecklist", MODE_PRIVATE)
+        val editor = prefs.edit()
+
+        editor.putString("intercorrenciaassumir", inputEntrar.text.toString())
+        editor.putString("intercorrenciaEntregar", inputSair.text.toString())
+
+
+        editor.apply()
+
+        finish()
 
 
     }
