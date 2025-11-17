@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         buttonShared.setOnClickListener {
-            val texto = gerarMensagem(nomeInput.toString(), dataInput.toString())
+            val texto = gerarMensagem()
 
             val intent = Intent(Intent.ACTION_SEND)
             intent.type = "text/plain"
@@ -85,28 +85,51 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private fun gerarMensagem(nome:String, data:String): String {
+    private fun gerarMensagem(): String {
         val prefs = getSharedPreferences("dadosChecklist", MODE_PRIVATE)
-
+        val nome = nomeInput.text.toString()
+        val data = dataInput.text.toString()
         val assumir = prefs.getString("intercorrenciasAssumir", "")
         val entregar = prefs.getString("intercorrenciasEntregar", "")
 
+        val personal = prefs.getString("vendasPersonal", "")
+        val diaria = prefs.getString("vendasDiaria", "")
+        val plus = prefs.getString("vendasPlus", "")
+        val bio = prefs.getString("vendasBio", "")
+        val mensal = prefs.getString("vendasMensal", "")
+        val start = prefs.getString("vendasStart", "")
+        val visita = prefs.getString("apenasVisitas", "")
+
+
         return """
-    CHECK LIST DE PLANTÃO entrada $data
+    ✅ CHECK LIST DE PLANTÃO entrada $data
 
     📍 Intercorrências ao assumir o plantão:
     $assumir
 
     ☑ Faltas na Equipe:
-    ▸ faltas
+    ▸ *faltas
 
     ☑ Ar Condicionado:
-    arCond
+    
+    ☑ Equipamentos com problema:
+    *equipamentos
+    
+    ☑ Equipamentos com problema:
+    *equipamentos
+    
+    ☑ Operacional
+    TOTEM *equipamentos
+    EVO *equipamentos
+    TEF *equipamentos
+    BIOIMPENDACIA *equipamentos
+    
+    ☑ Computadores (Pcs):
+    *equipamentos
+    
     
     📍 Intercorrências ao entregar o plantão:
     $entregar
-    
-    Observações Importantes:
     
     Att, $nome
     Consultor(a) Comercial – Academia Gaviões Pimentas🏆
@@ -115,13 +138,13 @@ class MainActivity : AppCompatActivity() {
     
     Consultor: $nome
     
-    PERSONAL: 0
-    AVULSO: 0
-    MENSAL: 1
-    START: 2
-    PLUS: 0
-    BIOIMPEDÂNCIA: 0
-    VISITAS: 0
+    PERSONAL: $personal
+    AVULSO: $diaria
+    MENSAL: $mensal
+    START: $start
+    PLUS: $plus
+    BIOIMPEDÂNCIA: $bio
+    VISITAS: $visita
     """.trimIndent()
     }
 
