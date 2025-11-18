@@ -47,7 +47,7 @@
             android:layout_marginStart="26dp"
             android:layout_marginTop="5dp"
             android:textColor="#FAFAFA"
-            android:textSize="9sp"
+            android:textSize="12dp"
             app:layout_constraintStart_toEndOf="@+id/textStart"
             app:layout_constraintTop_toBottomOf="@+id/inputMensal" />
 
@@ -58,7 +58,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="3dp"
             android:textColor="#FAFAFA"
-            android:textSize="9sp"
+            android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@+id/textPersonal"
             app:layout_constraintTop_toBottomOf="@+id/titleVendas" />
 
@@ -95,7 +95,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="2dp"
             android:textColor="#FAFAFA"
-            android:textSize="10sp"
+            android:textSize="12dp"
             app:layout_constraintStart_toEndOf="@+id/textBiopedancia"
             app:layout_constraintTop_toBottomOf="@+id/editPlus" />
 
@@ -106,7 +106,7 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="1dp"
             android:textColor="#FAFAFA"
-            android:textSize="10sp"
+            android:textSize="12dp"
             app:layout_constraintStart_toEndOf="@+id/textPlus"
             app:layout_constraintTop_toBottomOf="@+id/inputDiaria" />
 
@@ -117,7 +117,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="1dp"
             android:textColor="#FAFAFA"
-            android:textSize="9sp"
+            android:textSize="12dp"
             app:layout_constraintStart_toEndOf="@+id/textVisitas"
             app:layout_constraintTop_toBottomOf="@+id/inputStart" />
 
@@ -128,7 +128,7 @@
             android:layout_marginStart="18dp"
             android:layout_marginTop="3dp"
             android:textColor="#FAFAFA"
-            android:textSize="9sp"
+            android:textSize="12dp"
             app:layout_constraintStart_toEndOf="@+id/textMensal"
             app:layout_constraintTop_toBottomOf="@+id/titleVendas" />
 
@@ -139,7 +139,7 @@
             android:layout_marginStart="28dp"
             android:layout_marginTop="1dp"
             android:textColor="#FAFAFA"
-            android:textSize="9sp"
+            android:textSize="12dp"
             app:layout_constraintStart_toEndOf="@+id/textDiaria"
             app:layout_constraintTop_toBottomOf="@+id/inputPersonal" />
 
@@ -262,7 +262,7 @@
 
         <TextView
             android:id="@+id/titleVendas4"
-            android:layout_width="310dp"
+            android:layout_width="312dp"
             android:layout_height="wrap_content"
             android:text="Interocorrências ao deixar plantão"
             android:textColor="#FDFDFD"
@@ -336,7 +336,7 @@
             android:id="@+id/trueManu"
             android:layout_width="69dp"
             android:layout_height="18dp"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="6dp"
             android:layout_marginTop="10dp"
             android:text="OK"
             android:textAlignment="textStart"
@@ -481,7 +481,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Manutenções em andamento:"
+            android:text="Equipamentos com problema"
             android:textColor="#FDFDFD"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"

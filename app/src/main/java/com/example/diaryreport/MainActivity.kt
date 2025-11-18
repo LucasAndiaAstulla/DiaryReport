@@ -51,8 +51,6 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("nome_enviado", dataNome)
             intent.putExtra("dia_enviado", dataDia)
             startActivity(intent)
-
-
         }
 
         buttonShared.setOnClickListener {
@@ -74,6 +72,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+
     override fun onResume() {
         super.onResume()
 
@@ -92,13 +91,100 @@ class MainActivity : AppCompatActivity() {
         val assumir = prefs.getString("intercorrenciasAssumir", "")
         val entregar = prefs.getString("intercorrenciasEntregar", "")
 
-        val personal = prefs.getString("vendasPersonal", "")
-        val diaria = prefs.getString("vendasDiaria", "")
-        val plus = prefs.getString("vendasPlus", "")
-        val bio = prefs.getString("vendasBio", "")
-        val mensal = prefs.getString("vendasMensal", "")
-        val start = prefs.getString("vendasStart", "")
-        val visita = prefs.getString("apenasVisitas", "")
+        var personal = ""
+        personal = if (prefs.getString("vendasPersonal", "") == "") {
+            "0"
+        } else {
+            prefs.getString("vendasPersonal", "").toString()
+        }
+
+        var diaria = prefs.getString("vendasDiaria", "")
+        diaria = if (prefs.getString("vendasDiaria", "") == "") {
+            "0"
+        } else {
+            prefs.getString("vendasDiaria", "").toString()
+        }
+
+        var plus = prefs.getString("vendasPlus", "")
+        plus = if (prefs.getString("vendasPlus", "") == "") {
+            "0"
+        } else {
+            prefs.getString("vendasPlus", "").toString()
+        }
+
+        var bio = prefs.getString("vendasBio", "")
+        bio = if (prefs.getString("vendasBio", "") == "") {
+            "0"
+        } else {
+            prefs.getString("vendasBio", "").toString()
+        }
+
+        var mensal = prefs.getString("vendasMensal", "")
+        mensal = if (prefs.getString("vendasMensal", "") == "") {
+            "0"
+        } else {
+            prefs.getString("vendasMensal", "").toString()
+        }
+
+        var start = prefs.getString("vendasStart", "")
+        start = if (prefs.getString("vendasStart", "") == "") {
+            "0"
+        } else {
+            prefs.getString("vendasStart", "").toString()
+        }
+
+        var visita = prefs.getString("apenasVisitas", "")
+        visita = if (prefs.getString("apenasVisitas", "") == "") {
+            "0"
+        } else {
+            prefs.getString("apenasVisitas", "").toString()
+        }
+
+
+        var faltas = ""
+        if (prefs.getBoolean("semfalta", true)){
+            faltas = "Sem faltas"
+        } else if (prefs.getBoolean("falta", true)) {
+            faltas = "Faltas presentes, verificar na intercorrências ao entregar o plantão "
+        }
+
+
+        var ar = ""
+        if (prefs.getBoolean("arbom", true)){
+            ar = "Ar condicionado OK"
+        } else if (prefs.getBoolean("erroar", true)) {
+            ar = "Problemas no ar condicionado, verificar na intercorrências ao entregar o plantão "
+        }
+
+        var equipamentos = ""
+        if (prefs.getBoolean("sistemanormal", true)){
+            equipamentos = "OK"
+        } else if (prefs.getBoolean("errosistema", true)) {
+            equipamentos = "Erro, verificar na intercorrências ao entregar"
+        }
+
+        var catracas = ""
+        if (prefs.getBoolean("catracanormal", true)){
+            catracas = "Catracas OK"
+        } else if (prefs.getBoolean("errocatraca", true)) {
+            catracas = "Problemas nas catracas, verificar na intercorrências ao entregar o plantão "
+        }
+
+        var computadores = ""
+        if (prefs.getBoolean("compnormal", true)){
+            computadores = "Computadores funcionando corretamente"
+        } else if (prefs.getBoolean("errocomp", true)) {
+            computadores = "Problemas nos computadores, verificar na intercorrências ao entregar o plantão "
+        }
+
+        var maquinas = ""
+        if (prefs.getBoolean("semmanu", true)){
+            maquinas = "Nenhum equipamento em manutenção"
+        } else if (prefs.getBoolean("erromanu", true)) {
+            maquinas = "Alguns equipamentos em manutenção"
+        }
+
+
 
 
         return """
@@ -108,28 +194,28 @@ class MainActivity : AppCompatActivity() {
     $assumir
 
     ☑ Faltas na Equipe:
-    ▸ *faltas
+    ▸ $faltas
 
     ☑ Ar Condicionado:
-    
+    ▸ $ar
     ☑ Equipamentos com problema:
-    *equipamentos
+    ▸ $maquinas
     
-    ☑ Equipamentos com problema:
-    *equipamentos
+    ☑ Catracas
+    ▸ $catracas
     
     ☑ Operacional
-    TOTEM *equipamentos
-    EVO *equipamentos
-    TEF *equipamentos
-    BIOIMPENDACIA *equipamentos
+    TOTEM $equipamentos
+    EVO $equipamentos
+    TEF $equipamentos
+    BIOIMPENDACIA $equipamentos
     
     ☑ Computadores (Pcs):
-    *equipamentos
+    ▸ $computadores
     
     
     📍 Intercorrências ao entregar o plantão:
-    $entregar
+    ▸ $entregar
     
     Att, $nome
     Consultor(a) Comercial – Academia Gaviões Pimentas🏆
