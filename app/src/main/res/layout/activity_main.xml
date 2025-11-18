@@ -12,19 +12,17 @@
         android:id="@+id/minhaImagem"
         android:layout_width="177dp"
         android:layout_height="180dp"
+        android:layout_marginTop="100dp"
         android:contentDescription="Minha imagem de teste"
         android:src="@drawable/logo_gavioes"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.147" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/compartilhar"
+        android:id="@+id/compartilharButton"
         android:layout_width="131dp"
         android:layout_height="44dp"
-        android:layout_marginStart="56dp"
         android:backgroundTint="#504343"
         android:gravity="center"
         android:textAlignment="center"
@@ -32,14 +30,15 @@
         app:iconGravity="textStart"
         app:iconPadding="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/informacoes"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.794" />
+        app:layout_constraintTop_toBottomOf="@+id/dataInput" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/informacoes"
         android:layout_width="130dp"
         android:layout_height="44dp"
+        android:layout_marginEnd="40dp"
         android:backgroundTint="#504343"
         android:gravity="center"
         android:textAlignment="center"
@@ -48,16 +47,13 @@
         app:iconPadding="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.382"
-        app:layout_constraintStart_toEndOf="@+id/compartilhar"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.794" />
+        app:layout_constraintTop_toBottomOf="@+id/dataInput" />
 
     <EditText
         android:id="@+id/nomeInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="100dp"
         android:ems="10"
         android:inputType="text"
         android:text="Name"
@@ -70,15 +66,12 @@
         android:id="@+id/dataInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:ems="10"
         android:inputType="text"
         android:text="Data de hoje"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nomeInput"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/nomeInput" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

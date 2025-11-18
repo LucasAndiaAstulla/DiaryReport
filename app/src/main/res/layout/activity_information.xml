@@ -5,39 +5,538 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:textColor="#FFFFFF"
     tools:context=".MainActivity">
 
+    <!-- Usado o Constraint Layout para ser o conteiner das informações de vendas -->
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="141dp"
-        android:layout_height="29dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="16dp"
-        android:text="Seja bem-vindo"
-        android:textSize="20sp"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonSalvar"
+        android:layout_width="234dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#262626"
+        android:gravity="center"
+        android:text="Salvar"
+        android:textAlignment="center"
+        app:iconPadding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/boxChecklist"
+        app:layout_constraintVertical_bias="0.03" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/boxVendas"
+        android:layout_width="357dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_bg"
+        android:padding="16dp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/datePull">
+
+
+        <EditText
+            android:id="@+id/inputStart"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="5dp"
+            android:textColor="#FAFAFA"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/textStart"
+            app:layout_constraintTop_toBottomOf="@+id/inputMensal" />
+
+        <EditText
+            android:id="@+id/inputPersonal"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="3dp"
+            android:textColor="#FAFAFA"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/textPersonal"
+            app:layout_constraintTop_toBottomOf="@+id/titleVendas" />
+
+        <TextView
+            android:id="@+id/titleVendas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="Vendas:"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.003"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textPersonal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="15dp"
+            android:text="Personal:"
+            android:textColor="#FAFAFA"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleVendas" />
+
+        <EditText
+            android:id="@+id/editBiopedancia"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="2dp"
+            android:textColor="#FAFAFA"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/textBiopedancia"
+            app:layout_constraintTop_toBottomOf="@+id/editPlus" />
+
+        <EditText
+            android:id="@+id/editPlus"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="1dp"
+            android:textColor="#FAFAFA"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/textPlus"
+            app:layout_constraintTop_toBottomOf="@+id/inputDiaria" />
+
+        <EditText
+            android:id="@+id/inputVisitas"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="1dp"
+            android:textColor="#FAFAFA"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/textVisitas"
+            app:layout_constraintTop_toBottomOf="@+id/inputStart" />
+
+        <EditText
+            android:id="@+id/inputMensal"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="3dp"
+            android:textColor="#FAFAFA"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/textMensal"
+            app:layout_constraintTop_toBottomOf="@+id/titleVendas" />
+
+        <EditText
+            android:id="@+id/inputDiaria"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="1dp"
+            android:textColor="#FAFAFA"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/textDiaria"
+            app:layout_constraintTop_toBottomOf="@+id/inputPersonal" />
+
+
+        <TextView
+            android:id="@+id/textMensal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="17dp"
+            android:text="Mensal:"
+            android:textColor="#FAFAFA"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/inputPersonal"
+            app:layout_constraintTop_toBottomOf="@+id/titleVendas" />
+
+        <TextView
+            android:id="@+id/textDiaria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:text="Diária:"
+            android:textColor="#FAFAFA"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textPersonal" />
+
+        <TextView
+            android:id="@+id/textStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="20dp"
+            android:text="Start:"
+            android:textColor="#FAFAFA"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/inputDiaria"
+            app:layout_constraintTop_toBottomOf="@+id/textMensal" />
+
+
+        <TextView
+            android:id="@+id/textPlus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="19dp"
+            android:layout_marginTop="20dp"
+            android:text="Plus:"
+            android:textColor="#FAFAFA"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textDiaria" />
+
+        <TextView
+            android:id="@+id/textVisitas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="20dp"
+            android:text="Visitas:"
+            android:textColor="#FAFAFA"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/editPlus"
+            app:layout_constraintTop_toBottomOf="@+id/textStart" />
+
+
+        <TextView
+            android:id="@+id/textBiopedancia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Biopedância:"
+            android:textColor="#FAFAFA"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textPlus" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="352dp"
+        android:layout_height="163dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/rounded_bg"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boxVendas">
+
+        <TextView
+            android:id="@+id/titleVendas5"
+            android:layout_width="261dp"
+            android:layout_height="28dp"
+            android:text="Interocorrências ao assumir plantão"
+            android:textColor="#FDFDFD"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_column="0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_row="0" />
+
+        <EditText
+            android:id="@+id/inputSair"
+            android:layout_width="310dp"
+            android:layout_height="33dp"
+            android:textColor="#FDFDFD"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleVendas4"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/titleVendas4"
+            android:layout_width="312dp"
+            android:layout_height="wrap_content"
+            android:text="Interocorrências ao deixar plantão"
+            android:textColor="#FDFDFD"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputEntrar" />
+
+        <EditText
+            android:id="@+id/inputEntrar"
+            android:layout_width="310dp"
+            android:layout_height="33dp"
+            android:textColor="#FDFDFD"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleVendas5" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/boxChecklist"
+        android:layout_width="357dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/rounded_bg"
+        android:padding="16dp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+
+        <CheckBox
+            android:id="@+id/falseComp"
+            android:layout_width="69dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="9dp"
+            android:text="Falta"
+            android:textAlignment="textStart"
+            android:textColor="#FDFDFD"
+            app:layout_constraintStart_toEndOf="@+id/trueComp"
+            app:layout_constraintTop_toBottomOf="@+id/falseSistema" />
+
+        <CheckBox
+            android:id="@+id/trueComp"
+            android:layout_width="69dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="47dp"
+            android:layout_marginTop="9dp"
+            android:text="OK"
+            android:textAlignment="textStart"
+            android:textColor="#FDFDFD"
+            app:layout_constraintStart_toEndOf="@+id/textMensal6"
+            app:layout_constraintTop_toBottomOf="@+id/trueSistema" />
+
+        <CheckBox
+            android:id="@+id/falseManu"
+            android:layout_width="69dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="9dp"
+            android:text="Falta"
+            android:textAlignment="textStart"
+            android:textColor="#FDFDFD"
+            app:layout_constraintStart_toEndOf="@+id/trueManu"
+            app:layout_constraintTop_toBottomOf="@+id/falseComp" />
+
+        <CheckBox
+            android:id="@+id/trueManu"
+            android:layout_width="69dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="10dp"
+            android:text="OK"
+            android:textAlignment="textStart"
+            android:textColor="#FDFDFD"
+            app:layout_constraintStart_toEndOf="@+id/textMensal7"
+            app:layout_constraintTop_toBottomOf="@+id/trueComp" />
+
+        <CheckBox
+            android:id="@+id/falseSistema"
+            android:layout_width="69dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="8dp"
+            android:text="Falta"
+            android:textAlignment="textStart"
+            android:textColor="#FDFDFD"
+            app:layout_constraintStart_toEndOf="@+id/trueSistema"
+            app:layout_constraintTop_toBottomOf="@+id/falseCatraca" />
+
+        <CheckBox
+            android:id="@+id/trueSistema"
+            android:layout_width="69dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="8dp"
+            android:text="OK"
+            android:textAlignment="textStart"
+            android:textColor="#FDFDFD"
+            app:layout_constraintStart_toEndOf="@+id/textMensal5"
+            app:layout_constraintTop_toBottomOf="@+id/trueCatraca" />
+
+        <CheckBox
+            android:id="@+id/trueCatraca"
+            android:layout_width="69dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="65dp"
+            android:layout_marginTop="9dp"
+            android:text="OK"
+            android:textAlignment="textStart"
+            android:textColor="#FDFDFD"
+            app:layout_constraintStart_toEndOf="@+id/textMensal4"
+            app:layout_constraintTop_toBottomOf="@+id/trueAr" />
+
+        <CheckBox
+            android:id="@+id/falseCatraca"
+            android:layout_width="69dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="9dp"
+            android:text="Falta"
+            android:textAlignment="textStart"
+            android:textColor="#FDFDFD"
+            app:layout_constraintStart_toEndOf="@+id/trueCatraca"
+            app:layout_constraintTop_toBottomOf="@+id/falseAr" />
+
+        <CheckBox
+            android:id="@+id/falseFalta"
+            android:layout_width="69dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="15dp"
+            android:text="Falta"
+            android:textAlignment="textStart"
+            android:textColor="#FDFDFD"
+            app:layout_constraintStart_toEndOf="@+id/trueFalta"
+            app:layout_constraintTop_toBottomOf="@+id/titleVendas7" />
+
+        <CheckBox
+            android:id="@+id/trueFalta"
+            android:layout_width="69dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="15dp"
+            android:text="OK"
+            android:textAlignment="textStart"
+            android:textColor="#FDFDFD"
+            app:layout_constraintStart_toEndOf="@+id/textMensal2"
+            app:layout_constraintTop_toBottomOf="@+id/titleVendas7" />
+
+        <TextView
+            android:id="@+id/textMensal2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="16dp"
+            android:text="Faltas na equipe:"
+            android:textColor="#FDFDFD"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleVendas7" />
+
+        <TextView
+            android:id="@+id/textMensal3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="10dp"
+            android:text="Ar-condicionado:"
+            android:textColor="#FDFDFD"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textMensal2" />
+
+        <TextView
+            android:id="@+id/textMensal4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="49dp"
+            android:layout_marginTop="10dp"
+            android:text="Catracas:"
+            android:textColor="#FDFDFD"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textMensal3" />
+
+        <TextView
+            android:id="@+id/textMensal5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:text="Evo/TEF/Biopedancia:"
+            android:textColor="#FDFDFD"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textMensal4" />
+
+        <TextView
+            android:id="@+id/textMensal6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="10dp"
+            android:text="Computadores:"
+            android:textColor="#FDFDFD"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textMensal5" />
+
+        <TextView
+            android:id="@+id/textMensal7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Equipamentos com problema"
+            android:textColor="#FDFDFD"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textMensal6" />
+
+        <TextView
+            android:id="@+id/titleVendas7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Outras informações:"
+            android:textColor="#FDFDFD"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <CheckBox
+            android:id="@+id/falseAr"
+            android:layout_width="69dp"
+            android:layout_height="19dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="8dp"
+            android:text="Falta"
+            android:textAlignment="textStart"
+            android:textColor="#FDFDFD"
+            app:layout_constraintStart_toEndOf="@+id/trueAr"
+            app:layout_constraintTop_toBottomOf="@+id/falseFalta" />
+
+        <CheckBox
+            android:id="@+id/trueAr"
+            android:layout_width="69dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="8dp"
+            android:text="OK"
+            android:textAlignment="textStart"
+            android:textColor="#FDFDFD"
+            app:layout_constraintStart_toEndOf="@+id/textMensal3"
+            app:layout_constraintTop_toBottomOf="@+id/trueFalta" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
-        android:id="@+id/namePull"
-        android:layout_width="147dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="16dp"
-        android:text="{Nome aqui}"
+        android:id="@+id/textName"
+        android:layout_width="101dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="20dp"
+        android:text="Bem vindo"
+        android:textColor="#000000"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@id/textView"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/textDate"
-        android:layout_width="53dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="60dp"
-        android:text="Data:"
-        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/namePull"
+        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -45,301 +544,36 @@
         android:id="@+id/datePull"
         android:layout_width="110dp"
         android:layout_height="28dp"
-        android:text="{Data aqui}"
+        android:layout_marginEnd="96dp"
+        android:text="insira data"
+        android:textColor="#000000"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@id/textDate"
-        app:layout_constraintTop_toTopOf="@id/textDate"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-
-    <!-- Usado o Constraint Layout para ser o conteiner das informações de vendas -->
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/boxVendas"
-        android:layout_width="357dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/rounded_bg"
-        android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.462"
+        app:layout_constraintTop_toBottomOf="@+id/namePull" />
+
+    <TextView
+        android:id="@+id/textDate"
+        android:layout_width="53dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="136dp"
+        android:text="Data - "
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/datePull"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textDate">
+        app:layout_constraintTop_toBottomOf="@+id/textName" />
 
-
-        <TextView
-            android:id="@+id/titleVendas"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Vendas:"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-        <TextView
-            android:id="@+id/textPersonal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="Personal:"
-            android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/titleVendas" />
-
-        <EditText
-            android:id="@+id/editPersonal"
-            android:layout_width="52dp"
-            android:layout_height="39dp"
-            android:layout_marginStart="8dp"
-            app:layout_constraintBaseline_toBaselineOf="@id/textPersonal"
-            app:layout_constraintStart_toEndOf="@id/textPersonal" />
-
-        <TextView
-            android:id="@+id/textMensal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="Mensal:"
-            android:textSize="12sp"
-            app:layout_constraintBaseline_toBaselineOf="@id/textPersonal"
-            app:layout_constraintStart_toEndOf="@id/editPersonal" />
-
-        <EditText
-            android:id="@+id/editMensal"
-            android:layout_width="56dp"
-            android:layout_height="39dp"
-            android:layout_marginStart="8dp"
-            app:layout_constraintBaseline_toBaselineOf="@id/textMensal"
-            app:layout_constraintStart_toEndOf="@id/textMensal" />
-
-
-        <TextView
-            android:id="@+id/textDiaria"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="Diária:"
-            android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textPersonal" />
-
-        <EditText
-            android:id="@+id/editDiaria"
-            android:layout_width="53dp"
-            android:layout_height="38dp"
-            android:layout_marginStart="8dp"
-            app:layout_constraintBaseline_toBaselineOf="@id/textDiaria"
-            app:layout_constraintStart_toEndOf="@id/textDiaria" />
-
-        <TextView
-            android:id="@+id/textStart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:text="Start:"
-            android:textSize="12sp"
-            app:layout_constraintBaseline_toBaselineOf="@id/textDiaria"
-            app:layout_constraintStart_toEndOf="@id/editDiaria" />
-
-
-        <EditText
-            android:id="@+id/editStart"
-            android:layout_width="47dp"
-            android:layout_height="38dp"
-            android:layout_marginStart="8dp"
-            app:layout_constraintBaseline_toBaselineOf="@id/textStart"
-            app:layout_constraintStart_toEndOf="@id/textStart" />
-
-        <TextView
-            android:id="@+id/textPlus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="Plus:"
-            android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textDiaria" />
-
-        <EditText
-            android:id="@+id/editPlus"
-            android:layout_width="53dp"
-            android:layout_height="38dp"
-            android:layout_marginStart="8dp"
-            app:layout_constraintBaseline_toBaselineOf="@id/textPlus"
-            app:layout_constraintStart_toEndOf="@id/textPlus" />
-
-        <TextView
-            android:id="@+id/textVisitas"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:text="Visitas:"
-            android:textSize="12sp"
-            app:layout_constraintBaseline_toBaselineOf="@id/textPlus"
-            app:layout_constraintStart_toEndOf="@id/editPlus" />
-
-        <EditText
-            android:id="@+id/editVisitas"
-            android:layout_width="53dp"
-            android:layout_height="39dp"
-            android:layout_marginStart="8dp"
-            app:layout_constraintBaseline_toBaselineOf="@id/textVisitas"
-            app:layout_constraintStart_toEndOf="@id/textVisitas" />
-
-
-        <TextView
-            android:id="@+id/textBiopedancia"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="Biopedância:"
-            android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textPlus" />
-
-        <EditText
-            android:id="@+id/editBiopedancia"
-            android:layout_width="51dp"
-            android:layout_height="38dp"
-            android:layout_marginStart="8dp"
-            app:layout_constraintBaseline_toBaselineOf="@id/textBiopedancia"
-            app:layout_constraintStart_toEndOf="@id/textBiopedancia" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <LinearLayout
-        android:layout_width="360dp"
-        android:layout_height="159dp"
-        android:background="@drawable/rounded_bg"
-        android:orientation="vertical"
-        android:padding="16dp"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="314dp">
-
-        <TextView
-            android:id="@+id/titleVendas5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Interocorrências ao assumir plantão"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_column="0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_row="0" />
-
-        <EditText
-            android:id="@+id/editPersonal4"
-            android:layout_width="319dp"
-            android:layout_height="28dp"
-            android:layout_marginStart="8dp"
-            app:layout_constraintBaseline_toBaselineOf="@id/textPersonal"
-            app:layout_constraintStart_toEndOf="@id/textPersonal" />
-
-        <TextView
-            android:id="@+id/titleVendas4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Interocorrências ao deixar plantão"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/editPersonal5"
-            android:layout_width="326dp"
-            android:layout_height="33dp"
-            android:layout_marginStart="8dp"
-            app:layout_constraintBaseline_toBaselineOf="@id/textPersonal"
-            app:layout_constraintStart_toEndOf="@id/textPersonal" />
-    </LinearLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/boxChecklist"
-        android:layout_width="357dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/rounded_bg"
-        android:padding="16dp"
-        tools:layout_editor_absoluteX="27dp"
-        tools:layout_editor_absoluteY="498dp">
-
-
-        <TextView
-            android:id="@+id/textMensal2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Faltas na equipe:"
-            android:textSize="12sp"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="43dp" />
-
-        <TextView
-            android:id="@+id/textMensal3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ar-condicionado:"
-            android:textSize="12sp"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="75dp" />
-
-        <TextView
-            android:id="@+id/textMensal4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Catracas:"
-            android:textSize="12sp"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="107dp" />
-
-        <TextView
-            android:id="@+id/textMensal5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Evo/TEF/Biopedancia:"
-            android:textSize="12sp"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="139dp" />
-
-        <TextView
-            android:id="@+id/textMensal6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Computadores:"
-            android:textSize="12sp"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="171dp" />
-
-        <TextView
-            android:id="@+id/textMensal7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Manutenções em andamento:"
-            android:textSize="12sp"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="203dp" />
-
-        <TextView
-            android:id="@+id/textMensal8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="VISITAS:"
-            android:textSize="12sp"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="235dp" />
-
-        <TextView
-            android:id="@+id/titleVendas7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="Outras informações:"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/namePull"
+        android:layout_width="145dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="64dp"
+        android:text="Insira nome"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
