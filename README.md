@@ -1,6 +1,6 @@
 # 📱 Relatório Diário – Aplicativo Android
 
-Este projeto é um aplicativo Android desenvolvido com o objetivo de facilitar o registro diário de informações referentes ao trabalho/plantão. Ele permite que o usuário anote dados importantes, como vendas, intercorrências e condições gerais do ambiente, oferecendo uma forma simples e prática de salvar e compartilhar essas informações.
+Este projeto é um aplicativo Android desenvolvido com o objetivo de facilitar o registro diário de informações referentes ao meu trabalho atual realizado na Academia Gaviões 24h. Ele permite que o usuário anote dados importantes, como vendas, intercorrências e condições gerais do ambiente, oferecendo uma forma simples e prática de salvar e compartilhar essas informações.
 
 ---
 
@@ -76,10 +76,11 @@ Será adicionada uma nova funcionalidade permitindo gerar um relatório com o re
 ## 📸 Imagens do Aplicativo
 
 ### Tela Inicial
-_(adicione aqui a imagem no repositório)_
+<img src="app/src/main/res/drawable/inicial_app.jpeg" width="200" />
+
 
 ### Tela de Relatório
-_(adicione aqui a imagem no repositório)_
+<img src="app/src/main/res/drawable/informacoes_app.jpeg" width="200" />
 
 ---
 
