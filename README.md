@@ -88,13 +88,3 @@ Será adicionada uma nova funcionalidade permitindo gerar um relatório com o re
 
 Este aplicativo foi desenvolvido com foco na praticidade do dia a dia. Ele facilita o preenchimento de relatórios, padroniza informações e agiliza o processo de comunicação com a equipe ou supervisores por meio da integração direta com o WhatsApp.
 
----
-
-Se quiser, posso adicionar também:
-
-- Badges (Android, Kotlin, Versão, Status)
-- Instruções de instalação e execução
-- GIFs de demonstração do app
-- Sessão de changelog ou licença
-
-Só pedir! 😊
