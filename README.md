@@ -76,11 +76,11 @@ Será adicionada uma nova funcionalidade permitindo gerar um relatório com o re
 ## 📸 Imagens do Aplicativo
 
 ### Tela Inicial
-<img src="app/src/main/res/drawable/inicial_app.jpeg" width="200" />
+<img src="" width="200" />
 
 
 ### Tela de Relatório
-<img src="app/src/main/res/drawable/informacoes_app.jpeg" width="200" />
+<img src="" width="200" />
 
 ---
 
