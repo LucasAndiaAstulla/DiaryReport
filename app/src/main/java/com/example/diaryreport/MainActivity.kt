@@ -48,9 +48,14 @@ class MainActivity : AppCompatActivity() {
             val dataNome = nomeInput.text.toString()
             val dataDia = dataInput.text.toString()
             val intent = Intent(this, infoActivity::class.java)
-            intent.putExtra("nome_enviado", dataNome)
-            intent.putExtra("dia_enviado", dataDia)
-            startActivity(intent)
+
+            if (dataNome.isEmpty() || dataDia.isEmpty()) {
+                Toast.makeText(this, "Preencha o seu Nome e a Data de hoje!", Toast.LENGTH_SHORT).show()
+            } else{
+                intent.putExtra("nome_enviado", dataNome)
+                intent.putExtra("dia_enviado", dataDia)
+                startActivity(intent)
+            }
         }
 
         buttonShared.setOnClickListener {
