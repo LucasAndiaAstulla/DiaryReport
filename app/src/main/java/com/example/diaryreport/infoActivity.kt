@@ -85,14 +85,17 @@ class infoActivity : AppCompatActivity() {
         trueManu = findViewById(R.id.trueManu)
         falseManu = findViewById(R.id.falseManu)
 
-        val localNome = findViewById<TextView>(R.id.namePull)
-        val localDia = findViewById<TextView>(R.id.datePull)
+
+        val tituloView = findViewById<TextView>(R.id.tituloInfo)
 
         val nomeRecebido = intent.getStringExtra("nome_enviado")
-        localNome.text = nomeRecebido
+
 
         val diaRecebido = intent.getStringExtra("dia_enviado")
-        localDia.text = diaRecebido
+
+
+        val titulo = "Bem vindo!! $nomeRecebido\nData - $diaRecebido"
+        tituloView.text = titulo
 
         salvar.setOnClickListener {
             //informações sobre assumir e deixar cargo
@@ -133,11 +136,8 @@ class infoActivity : AppCompatActivity() {
 
             //Salvar nome e data
             val nomeRecebido = intent.getStringExtra("nome_enviado")
-            localNome.text = nomeRecebido
 
             val diaRecebido = intent.getStringExtra("dia_enviado")
-            localDia.text = diaRecebido
-
 
 
             editor.apply()
