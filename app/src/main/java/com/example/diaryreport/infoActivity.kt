@@ -89,8 +89,6 @@ class infoActivity : AppCompatActivity() {
         val tituloView = findViewById<TextView>(R.id.tituloInfo)
 
         val nomeRecebido = intent.getStringExtra("nome_enviado")
-
-
         val diaRecebido = intent.getStringExtra("dia_enviado")
 
 

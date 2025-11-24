@@ -190,7 +190,7 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-
+        //Mensagem que vai ser enviada
 
         return """
     ✅ CHECK LIST DE PLANTÃO entrada $data
